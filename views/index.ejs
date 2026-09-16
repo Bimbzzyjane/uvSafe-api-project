@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UV-Safe</title>
+    <link rel = "stylesheet" href ="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<!--"DM Serif Display", serif;-->
+<!--"Plus Jakarta Sans", sans-serif;-->
+<!--"Inter", sans-serif;-->
+
+<body>
+    <header>
+
+        <div class="header-content">
+
+            <a href="/" class="logo">UV☀️Safe</a>
+            <nav class="about">
+                <a href="/about">About</a>
+            </nav>
+        </div>     
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>
+                Do I need sunscreen <span>today?</span>
+            </h1>
+            <p class="hero-text"> 
+                Check the UV level for any location.
+            </p>
+
+            <form class="location-form" action="/check-uv" method="post">
+                <label for="userInput">
+                    Enter a city or location ⬇️
+                </label>
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    name="userInput"
+                    placeholder="📍 City, State, e.g. Ikeja, Lagos"
+                >
+
+                <button type="submit">
+                    Check UV☀️
+                </button> 
+            </form>
+            
+            <% if (error) { %>
+                <p class="error-message">
+                    <%= error %>
+                </p>
+            <% } %>
+        </div>
+         
+    </section>
+
+    <% if (uvNumber !== "") { %>
+
+        <section class="uv-section" id="uv-card">
+            
+            <div class="uv-card">
+                <h2>Today's UV Forecast</h2>
+            
+                <div class="location">
+                    📍 <%= location %>
+                </div>
+                
+                <div class="uv-result">
+                    <p class="uv-number <%= uvLevel.toLowerCase().replace(' ', '-') %>"><%= uvNumber %></p>
+                    <p class="uv-level <%= uvLevel.toLowerCase().replace(' ', '-') %>"> <%= uvLevel %></p>
+                </div>
+                
+
+                <div class="uv-details">
+                    <div class="detail"> 
+                        <span>Peak UV Today</span> 
+                        <strong><%= peakUV %></strong>
+                    </div>
+                
+                    <div class="detail">
+                        <span>Peak Time</span>
+                        <strong><%= peakUVTime %></strong>
+                    
+                    </div>
+                
+                </div>
+
+                <div class="recommendation">
+                    <h3> <%= recommendationTitle %></h3>
+                    <p>
+                        <%= recommendationText %>
+                    </p>
+
+                    <p>
+                        <strong>Note:</strong>
+                        <%= peakRecommendation %>
+                    </p>
+                </div>
+
+            </div>
+            
+        </section>
+
+    <% } %>
+
+    <footer class="footer">
+        <p>
+            UV☀️Safe
+        </p>
+
+        <p>
+            © <%= new Date().getFullYear() %> JanetOkedoyin
+        </p>
+    </footer>
+
+    <script>
+        const uvCard = document.getElementById("uv-card");
+
+        if (uvCard) {
+            uvCard.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    </script>
+</body>
+</html>

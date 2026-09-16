@@ -1,0 +1,476 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;   
+}
+
+body{
+    background-color: #F4F9FC; /*Soft Canvas Blue*/
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    color: #102F58; /*ink blue*/ 
+}
+
+header{
+    padding: 7px 6%;    
+    height: 50px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #e4edf3;
+}
+
+.header-content{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 30px;
+}
+
+.logo{
+    text-decoration: none;
+    color: #102F58;
+    font-size: 2rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 800;
+    
+}
+
+nav a{
+    text-decoration: none;
+    color: #102F58;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+nav a:hover{
+    color: #F2A900;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex:1; /*so the hero section can fill the page before user input location and card section appears*/
+    padding: 25px 6%;
+    min-height: 350px;
+    background-color: #E8F5FF;/*light blue*/   
+}
+
+.hero-content {
+    width: 100%;
+    text-align: center;
+}
+
+.hero-content h1{
+    font-size: 4.5rem;
+    line-height: 1.2;
+    font-family: "DM Serif Display", serif;
+}
+
+.hero-content h1 span{
+    color: #F2A900;
+}
+
+.hero-text{
+    font-size: 1.7rem; 
+    margin-bottom: 20px;
+    color: #52657A;
+}
+
+.location-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location-form label {  
+    font-weight: 600; 
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+input { 
+    width: 500px;
+    max-width: 100%;
+    padding: 12px 15px; 
+    border: 1px solid #C9D9E6; 
+    border-radius: 10px; 
+    outline: none; 
+    background-color: #FFFFFF;
+    font-size: 1rem; 
+}
+
+input:focus { 
+    border-color: #FFC857; 
+}
+
+.location-form button { 
+    width: 500px;
+    max-width: 100%;
+    margin-top: 10px;
+    padding: 12px 15px; 
+    border: none; 
+    border-radius: 25px; 
+    background-color: #FFC857; /*sun yellow*/
+    color: #040273; 
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    cursor: pointer; 
+}
+
+.location-form button:hover { 
+    background-color: #F2A900; 
+}
+
+.error-message {
+    margin-top: 15px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: #fff0f0;
+    color: #b42318;
+    /*font-family: "Inter", sans-serif;*/
+    font-size: 14px;
+    text-align: center;
+}
+
+/*Card Section*/
+
+.uv-section{
+    padding: 10px 6%;
+   
+}
+
+.uv-card{
+    background-color: #FFFFFF;/*pure white with smooth shadows*/
+    box-shadow: 0 10px 30px rgba(16, 47, 88, 0.08);
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 20px 25px;
+}
+
+.uv-card h2{
+    margin-bottom: 10px;
+    font-family: "DM Serif Display", serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.uv-card .location{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #EEF4FF;
+    color: #355477;
+    font-size: 1rem;
+}
+
+.uv-result{
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 16px;
+    background-color: white;
+    text-align: center;
+}
+
+.uv-number{
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+.uv-level{
+    display: inline-block;
+    border-radius: 50px;
+    padding: 8px 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+/*UV LEVEL COLOURS*/
+/* LOW */
+.uv-number.low {
+    color: #2E8B57;
+}
+
+.uv-level.low {
+    background-color: #DDF5E8;
+    color: #176B45;
+}
+
+
+/* MODERATE */
+.uv-number.moderate {
+    color: #D69E00;
+}
+
+.uv-level.moderate {
+    background-color: #FFF4C2;
+    color: #8A6500;
+}
+
+
+/* HIGH */
+.uv-number.high {
+    color: #E87500;
+}
+
+.uv-level.high {
+    background-color: #FFE1C2;
+    color: #A94D00;
+}
+
+
+/* VERY HIGH */
+.uv-number.very-high {
+    color: #E0521D;
+}
+
+.uv-level.very-high {
+    background-color: #FFE0D2;
+    color: #B83A0F;
+}
+
+
+/* EXTREME */
+.uv-number.extreme {
+    color: #8E44AD;
+}
+
+.uv-level.extreme {
+    background-color: #EEDDF5;
+    color: #6C3483;
+}
+
+
+.uv-details{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+    padding: 18px 10px;
+    border-radius: 16px;
+    background-color: #EEF4FF;
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.detail span{
+    color: #62788F;
+    font-size: 1.2rem;
+}
+
+.recommendation{
+    margin-top: 15px;
+    padding: 20px 10px;
+    border-radius: 16px;
+    background-color: #EAF8F0; /*soft green*/
+    text-align: center;
+}
+
+.recommendation h3{
+    margin-bottom:10px;
+    color: #176B45;
+    font-family: "DM Serif Display", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.recommendation p{
+    line-height: 1.8;
+    color: #426657;
+}
+
+/*FOOTER SECTION*/
+.footer{
+    margin-top: auto;
+    background-color: #102F58;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #e4edf3;
+}
+
+.footer p:first-child{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.footer p:last-child{
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #D7E4F0;
+}
+
+/* ABOUT PAGE */
+
+.about-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 6%;
+    background-color: #E8F5FF;
+}
+
+.about-card {
+    width: 100%;
+    max-width: 750px;
+    padding: 45px 50px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 30px rgba(16, 47, 88, 0.08);
+    text-align: center;
+}
+
+.about-card h1 {
+    margin-bottom: 25px;
+    font-family: "DM Serif Display", serif;
+    font-size: 3rem;
+}
+
+.about-card p {
+    margin-bottom: 18px;
+    color: #52657A;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.about-note {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #EAF8F0;
+    color: #176B45;
+    font-size: 1rem;
+}
+
+
+
+/*RESPONSIVENESS*/
+@media (max-width: 768px) { /*TABLETS*/
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+    }
+
+    input,
+    .location-form button {
+        width: 450px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) { /*MOBILE PHONES*/
+
+    header {
+        padding: 7px 5%;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        min-height: 300px;
+        padding: 30px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    input,
+    .location-form button {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .uv-section {
+        padding: 10px 5%;
+    }
+
+    .uv-card {
+        padding: 18px 15%;
+    }
+
+    .uv-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .uv-number {
+        font-size: 4rem;
+    }
+
+    .uv-level {
+        padding: 7px 18px;
+        font-size: 1.2rem;
+    }
+
+    .uv-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .detail span {
+        font-size: 1rem;
+    }
+
+    .recommendation {
+        padding: 18px 12px;
+    }
+
+    .recommendation h3 {
+        font-size: 1.3rem;
+    }
+
+}
+
+/* ABOUT PAGE - MOBILE */
+
+@media (max-width: 480px) {
+
+    .about-section {
+        padding: 30px 5%;
+    }
+
+    .about-card {
+        padding: 30px 20px;
+    }
+
+    .about-card h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-card p {
+        font-size: 1rem;
+    }
+}
