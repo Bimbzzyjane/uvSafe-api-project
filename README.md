@@ -1,8 +1,8 @@
-# ☀️ UV-Safe
+#  UV☀️Safe
 
 ### Check the UV level for any location and know when to use sunscreen.
 
-**UV-Safe** is a responsive web application that allows users to enter a city or location and check its UV conditions.
+**UV☀️Safe** is a responsive web application that allows users to enter a city or location and check its UV conditions.
 
 The project was built as a practical way to learn how to work public APIs using Node.js, Express.js, Axios and EJS.
 
@@ -13,11 +13,10 @@ The project was built as a practical way to learn how to work public APIs using 
 
 ## 📸 Preview
 
-```md
 ![UV-Safe Homepage](screenshots/homepage.png)
 
 ![UV-Safe Results](screenshots/result.png)
-```
+
 
 ## 🛠️ Technologies Used
 
@@ -44,7 +43,7 @@ The project was built as a practical way to learn how to work public APIs using 
 
 ## 🔄 How It Works
 
-UV-Safe uses two APIs to retrieve and display UV information.
+UV☀️Safe uses two APIs to retrieve and display UV information.
 
 ```text
 1. The user enters a city or location.
@@ -58,7 +57,7 @@ UV-Safe uses two APIs to retrieve and display UV information.
 
 ## ⚙️ Getting Started
 
-To run UV-Safe locally, follow the steps below.
+To run UV☀️Safe locally, follow the steps below.
 
 ### 1. Clone the repository
 
